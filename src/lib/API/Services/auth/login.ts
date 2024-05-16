@@ -1,12 +1,12 @@
 import 'client-only';
-import { AuthError } from '@/lib/utils/error';
+import { signIn, signOut } from 'next-auth/react';
 import { toast } from 'react-toastify';
 
-import { signIn, signOut } from 'next-auth/react';
+import { EmailFormValues } from '@/lib/types/validations';
+import { AuthProviderE } from '@/lib/types/enums';
+import { AuthError } from '@/lib/utils/error';
 import configuration from '@/lib/config/api';
 import config from '@/lib/config/auth';
-import { AuthProviderE } from '@/lib/types/enums';
-import { EmailFormValues } from '@/lib/types/validations';
 
 export const Login = async ({ email }: EmailFormValues) => {
   try {
